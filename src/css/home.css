@@ -1,0 +1,149 @@
+
+.home-container {
+  width: 100%;
+  min-height: 100vh;
+}
+.header {
+  width: 100%;
+  background-color: #2d2d2d;
+  padding: 15px 30px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: relative;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  font-family: 'Roboto', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; /* Font hiện đại */
+
+}
+
+/* Header Left - Logo */
+.header-left {
+  display: flex;
+  align-items: center;
+}
+
+.title {
+  font-size: 28px;
+  font-weight: bold;
+  margin: 0;
+  margin-right: 5px;
+}
+
+.text-one {
+  color: white;
+}
+
+.text-two {
+  color: #ff6b35;
+}
+
+/* Header Right */
+.header-right {
+  display: flex;
+  align-items: center;
+  gap: 30px;
+}
+
+/* Navigation Lists */
+.select-list {
+  display: flex;
+}
+
+.nav-list {
+  display: flex;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  gap: 25px;
+}
+
+/* Navigation Links */
+.nav-list-title .item-title a {
+  color: white;
+  text-decoration: none;
+  font-size: 16px;
+  font-weight: 500;
+  transition: color 0.3s ease;
+  padding: 8px 12px;
+  border-radius: 4px;
+}
+
+.nav-list-title .item-title a:hover {
+  color: #ff6b35;
+  background-color: rgba(255, 255, 255, 0.1);
+}
+
+/* Navigation Icons */
+.nav-list-icon {
+  gap: 20px;
+}
+
+.item-icon {
+  color: white;
+  font-size: 18px;
+  cursor: pointer;
+  transition: color 0.3s ease, transform 0.2s ease;
+  padding: 8px;
+  border-radius: 4px;
+}
+
+.item-icon:hover {
+  color: #ff6b35;
+  transform: scale(1.1);
+  background-color: rgba(255, 255, 255, 0.1);
+}
+
+
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .header {
+    padding: 12px 20px;
+    flex-wrap: wrap;
+    gap: 15px;
+  }
+  
+  .header-right {
+    flex-direction: column;
+    gap: 15px;
+    width: 100%;
+    justify-content: space-between;
+  }
+  
+  .nav-list {
+    gap: 15px;
+  }
+  
+  .title {
+    font-size: 24px;
+  }
+  
+  .nav-list-title .item-title a {
+    font-size: 14px;
+    padding: 6px 10px;
+  }
+  
+
+}
+
+@media (max-width: 480px) {
+  .header {
+    padding: 10px 15px;
+  }
+  
+  .header-right {
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+  
+  .nav-list {
+    gap: 10px;
+  }
+  
+  .title {
+    font-size: 20px;
+  }
+  
+ 
+}

@@ -1,0 +1,144 @@
+.login-container {
+  display: flex;
+  justify-content: center; /* Căn giữa theo chiều ngang */
+  align-items: center; /* Căn giữa theo chiều dọc */
+  width: 100vw; /* Chiếm toàn bộ chiều rộng viewport */
+  height: 100vh; /* Chiếm toàn bộ chiều cao viewport */
+  background-color: #f5f5f5; /* Nền xám nhạt, nhẹ nhàng */
+  margin: 0;
+  padding: 0;
+}
+
+.login {
+  display: flex;
+  flex-direction: column;
+  width: 420px; /* Tăng nhẹ chiều rộng cho cân đối */
+  height: auto;
+  border-radius: 16px; /* Viền cong mềm mại hơn */
+  padding: 32px; /* Tăng padding cho thoáng */
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08); /* Bóng đổ tinh tế */
+  background-color: #ffffff; /* Nền trắng tinh khôi */
+  align-items: center;
+  font-family: 'Roboto', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; /* Font hiện đại */
+}
+
+.login__title {
+  font-weight: 700;
+  font-size: 2.25rem; /* Tăng nhẹ kích thước chữ */
+  color: #1a1a1a; /* Màu đen đậm, cổ điển */
+  margin-bottom: 24px; /* Khoảng cách dưới tiêu đề */
+  letter-spacing: 0.5px; /* Tăng độ giãn chữ cho thanh lịch */
+}
+
+.login__input-group {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem; /* Tăng khoảng cách giữa các input */
+  width: 100%;
+}
+
+.login__input-wrap {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.login__input {
+  width: 100%;
+  padding: 12px 12px 12px 48px; /* Tăng padding cho input thoải mái hơn */
+  border-radius: 8px; /* Viền cong hơn */
+  font-size: 1rem;
+  border: 1px solid #e0e0e0; /* Viền xám nhạt */
+  background-color: #fafafa; /* Nền input nhạt */
+  transition: all 0.4s ease; /* Hiệu ứng mượt mà hơn */
+}
+
+.login__input:focus {
+  outline: none;
+  border-color: #2c3e50; /* Màu xanh đen khi focus */
+  box-shadow: 0 0 8px rgba(44, 62, 80, 0.2); /* Bóng đổ nhẹ khi focus */
+  background-color: #ffffff; /* Nền trắng khi focus */
+}
+
+.login__icon {
+  position: absolute;
+  left: 16px; /* Dịch icon sang phải một chút */
+  color: #666; /* Màu xám trung tính */
+  font-size: 1.3rem; /* Tăng kích thước icon */
+}
+
+.login__bottom {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1.5rem; /* Tăng khoảng cách cho thoáng */
+  margin-top: 1.5rem;
+  width: 100%;
+}
+
+.login__forgot-text {
+  color: #1a1a1a; /* Màu đen đậm */
+  cursor: pointer;
+  align-self: flex-end;
+  font-size: 0.9rem;
+  transition: color 0.3s ease;
+}
+
+.login__forgot-text:hover {
+  color: #2c3e50; /* Xanh đen khi hover */
+}
+
+.login__button {
+  width: 100%;
+  background-color: #1a1a1a; /* Nút màu đen đậm */
+  color: #ffffff; /* Chữ trắng */
+  padding: 14px; /* Tăng padding cho nút lớn hơn */
+  border: none;
+  border-radius: 8px; /* Viền cong hơn */
+  font-size: 1rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.4s ease; /* Hiệu ứng mượt mà */
+}
+
+.login__button:hover {
+  background-color: #2c3e50; /* Xanh đen khi hover */
+  transform: scale(1.02); /* Hiệu ứng phóng to nhẹ */
+}
+
+.login__bottom p {
+  color: #1a1a1a; /* Chữ đen cho phần "New user?" */
+  font-size: 0.9rem;
+}
+
+.login__bottom a {
+  color: #2c3e50; /* Link màu xanh đen */
+  text-decoration: none;
+  font-weight: 500;
+  transition: color 0.3s ease;
+}
+
+.login__bottom a:hover {
+  color: #1a1a1a; /* Đen đậm khi hover */
+}
+
+@media (max-width: 480px) {
+  .login {
+    width: 90%; /* Chiếm gần hết chiều rộng trên mobile */
+    padding: 24px;
+  }
+
+  .login__title {
+    font-size: 1.75rem; /* Giảm kích thước chữ trên mobile */
+  }
+
+  .login__input {
+    font-size: 0.95rem;
+    padding: 10px 10px 10px 44px;
+  }
+
+  .login__button {
+    padding: 12px;
+    font-size: 0.95rem;
+  }
+}
