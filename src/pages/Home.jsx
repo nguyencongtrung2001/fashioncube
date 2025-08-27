@@ -1,10 +1,14 @@
-import React from 'react';
-import { Link } from 'react-router-dom';
-import { FaSearch, FaUser, FaShoppingCart } from 'react-icons/fa';
-import '../css/home.css';
-import DisplayBackground from '../components/DisplayBackground';
+import React from "react";
+import { Link } from "react-router-dom";
+import { FaSearch, FaUser, FaShoppingCart } from "react-icons/fa";
+import "../css/home.css";
+import Promote from "../components/Promote";
+import Display from "../components/Display";
 
-const Home = () => {
+const Home = () => { 
+  const handleselect = () =>{
+
+  }
   return (
     <div className="home-container">
       <div className="header">
@@ -42,7 +46,16 @@ const Home = () => {
         </div>
       </div>
       {/* Thêm phần nội dung chính (tùy chọn) */}
-      <DisplayBackground/>
+      <Promote />
+
+      <div className="display-clothes">
+        <h1 className="display-title">New Arrivals</h1>
+        <div className="display-category-button">
+          <button className="btn btn-all" onClick={handleselect}> ALL</button>
+          <button className="btn btn-men" onClick={handleselect}> MEN</button>
+          <button className="btn btn-women" onClick={handleselect}> WOMEN'S </button>
+        </div>
+      </div>
     </div>
   );
 };
