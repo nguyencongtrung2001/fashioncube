@@ -4,7 +4,7 @@ import '../css/displaybackground.css';
 
 const DisplayBackground = () => {
   // Lấy ảnh đầu tiên từ mảng display (giả sử display là mảng URL ảnh)
-  const backgroundImage = display.length > 0 ? `url(${display[0]})` : 'none';
+  const backgroundImage = display;
 
   const divStyle = {
     backgroundImage: backgroundImage, // Sử dụng backgroundImage thay vì image

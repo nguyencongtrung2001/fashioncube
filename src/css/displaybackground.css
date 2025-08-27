@@ -1,15 +1,10 @@
 .displaybackground-container {
   width: 100%;
-  /* min-height: calc(100vh - 70px); /* Chiều cao dựa trên header 70px */
-  /* padding: 40px 20px; */
-  text-align: center; */
-  background-color: #1a1a1a; /* Nền đen đậm, phong cách trắng-đen */
+  background-color: red; /* Nền đen đậm, phong cách trắng-đen */
   margin-top: 20px;
   color: #ffffff; /* Chữ trắng */
   position: relative;
   overflow: hidden; /* Ngăn tràn nội dung */
-  /* max-width: 1280px; Giới hạn chiều rộng */
-  /* margin: 0 auto; Căn giữa */
 }
 
 .display-list {
