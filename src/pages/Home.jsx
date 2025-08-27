@@ -1,11 +1,23 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import { FaSearch, FaUser, FaShoppingCart } from "react-icons/fa";
+import { FaSearch, FaUser, FaShoppingCart, FaSignOutAlt } from "react-icons/fa";
+import { useDispatch, useSelector } from 'react-redux';
+import { logout } from '../redux/slices/userSlice';
 import "../css/home.css";
 import Promote from "../components/Promote";
 import Selectcategory from "../components/Selectcategory";
+import Display from "../components/Display";
 
-const Home = () => { 
+const Home = () => {
+  const dispatch = useDispatch();
+  const { currentUser } = useSelector((state) => state.user);
+
+  const handleLogout = () => {
+    if (window.confirm('Bạn có chắc chắn muốn đăng xuất?')) {
+      dispatch(logout());
+    }
+  };
+
   return (
     <div className="home-container">
       <div className="header">
@@ -17,7 +29,7 @@ const Home = () => {
           <div className="select-list">
             <ul className="nav-list nav-list-title">
               <li className="item-title">
-                <Link to="/">Home</Link>
+                <Link to="/home">Home</Link>
               </li>
               <li className="item-title">
                 <Link to="/shop">Shop</Link>
@@ -32,20 +44,24 @@ const Home = () => {
               <li className="item-icon">
                 <FaSearch />
               </li>
-              <li className="item-icon">
+              <li className="item-icon user-info" title={currentUser?.email}>
                 <FaUser />
+                <span className="user-name">{currentUser?.name}</span>
               </li>
               <li className="item-icon">
                 <FaShoppingCart />
+              </li>
+              <li className="item-icon" onClick={handleLogout} title="Đăng xuất">
+                <FaSignOutAlt />
               </li>
             </ul>
           </div>
         </div>
       </div>
-      {/* Thêm phần nội dung chính (tùy chọn) */}
+      
       <Promote />
-      <Selectcategory/>
-       
+      <Selectcategory />
+      <Display />
     </div>
   );
 };

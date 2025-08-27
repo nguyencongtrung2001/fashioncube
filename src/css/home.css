@@ -1,8 +1,8 @@
-
 .home-container {
   width: 100%;
   min-height: 100vh;
 }
+
 .header {
   width: 100%;
   background-color: #070707;
@@ -12,11 +12,9 @@
   align-items: center;
   position: relative;
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-  font-family: 'Roboto', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; /* Font hiện đại */
-
+  font-family: 'Roboto', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
 }
 
-/* Header Left - Logo */
 .header-left {
   display: flex;
   align-items: center;
@@ -37,14 +35,12 @@
   color: #ff6b35;
 }
 
-/* Header Right */
 .header-right {
   display: flex;
   align-items: center;
   gap: 30px;
 }
 
-/* Navigation Lists */
 .select-list {
   display: flex;
 }
@@ -57,7 +53,6 @@
   gap: 25px;
 }
 
-/* Navigation Links */
 .nav-list-title .item-title a {
   color: white;
   text-decoration: none;
@@ -73,7 +68,6 @@
   background-color: rgba(255, 255, 255, 0.1);
 }
 
-/* Navigation Icons */
 .nav-list-icon {
   gap: 20px;
 }
@@ -85,6 +79,9 @@
   transition: color 0.3s ease, transform 0.2s ease;
   padding: 8px;
   border-radius: 4px;
+  display: flex;
+  align-items: center;
+  gap: 5px;
 }
 
 .item-icon:hover {
@@ -93,19 +90,28 @@
   background-color: rgba(255, 255, 255, 0.1);
 }
 
+.user-info {
+  position: relative;
+}
+
+.user-name {
+  font-size: 12px;
+  font-weight: 500;
+  margin-left: 4px;
+  opacity: 0.8;
+}
 
 .display-title {
-    font-size: 1.8rem;
-    color:rgb(39, 38, 38)
-}
-.display-title::after {
-    width: 3px;
-    height: 3px;
-    background-color: black;
-    border: 2 solid black;
-    
+  font-size: 1.8rem;
+  color: rgb(39, 38, 38);
 }
 
+.display-title::after {
+  width: 3px;
+  height: 3px;
+  background-color: black;
+  border: 2px solid black;
+}
 
 /* Responsive Design */
 @media (max-width: 768px) {
@@ -135,7 +141,9 @@
     padding: 6px 10px;
   }
   
-
+  .user-name {
+    display: none;
+  }
 }
 
 @media (max-width: 480px) {
@@ -156,6 +164,4 @@
   .title {
     font-size: 20px;
   }
-  
- 
 }
