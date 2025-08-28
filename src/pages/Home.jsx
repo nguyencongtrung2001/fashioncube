@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import { FaSearch, FaUser, FaShoppingCart, FaSignOutAlt } from "react-icons/fa";
 import { useDispatch, useSelector } from 'react-redux';
@@ -7,15 +7,25 @@ import "../css/home.css";
 import Promote from "../components/Promote";
 import Selectcategory from "../components/Selectcategory";
 import Display from "../components/Display";
+import Cart from "../components/Cart";
 
 const Home = () => {
   const dispatch = useDispatch();
   const { currentUser } = useSelector((state) => state.user);
+  const [isCartOpen, setIsCartOpen] = useState(false);
 
   const handleLogout = () => {
     if (window.confirm('Bạn có chắc chắn muốn đăng xuất?')) {
       dispatch(logout());
     }
+  };
+
+  const toggleCart = () => {
+    setIsCartOpen(!isCartOpen);
+  };
+
+  const closeCart = () => {
+    setIsCartOpen(false);
   };
 
   return (
@@ -48,7 +58,7 @@ const Home = () => {
                 <FaUser />
                 <span className="user-name">{currentUser?.name}</span>
               </li>
-              <li className="item-icon">
+              <li className="item-icon" onClick={toggleCart} title="Giỏ hàng">
                 <FaShoppingCart />
               </li>
               <li className="item-icon" onClick={handleLogout} title="Đăng xuất">
@@ -62,6 +72,8 @@ const Home = () => {
       <Promote />
       <Selectcategory />
       <Display />
+      
+      <Cart isOpen={isCartOpen} onClose={closeCart} />
     </div>
   );
 };

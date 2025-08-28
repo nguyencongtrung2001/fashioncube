@@ -28,21 +28,32 @@ const Login = () => {
 
     dispatch(loginStart());
 
-    // Simulate API call
+    // Simulate API call - Accept any valid email and password
     setTimeout(() => {
-      if (email === 'admin@example.com' && password === '123456') {
-        const userData = {
-          id: 1,
-          email: email,
-          name: 'Admin User',
-          avatar: null,
-          loginTime: new Date().toISOString()
-        };
-        dispatch(loginSuccess(userData));
-        navigate('/home');
-      } else {
-        dispatch(loginFailure('Email hoặc mật khẩu không đúng!'));
+      // Simple validation: email format and password length
+      const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+      
+      if (!emailRegex.test(email)) {
+        dispatch(loginFailure('Định dạng email không hợp lệ!'));
+        return;
       }
+      
+      if (password.length < 6) {
+        dispatch(loginFailure('Mật khẩu phải có ít nhất 6 ký tự!'));
+        return;
+      }
+      
+      // Create user data from input
+      const userData = {
+        id: Date.now(), // Generate unique ID
+        email: email,
+        name: email.split('@')[0], // Use email prefix as name
+        avatar: null,
+        loginTime: new Date().toISOString()
+      };
+      
+      dispatch(loginSuccess(userData));
+      navigate('/home');
     }, 1000);
   };
 
@@ -58,7 +69,7 @@ const Login = () => {
                 className='login__input'
                 value={email}
                 type='email'
-                placeholder='Email (admin@example.com)'
+                placeholder='Email'
                 onChange={(e) => setEmail(e.target.value)}
                 disabled={loading}
               />
@@ -69,7 +80,7 @@ const Login = () => {
                 className='login__input'
                 value={password}
                 type='password'
-                placeholder='Password (123456)'
+                placeholder='Password (tối thiểu 6 ký tự)'
                 onChange={(e) => setPassword(e.target.value)}
                 disabled={loading}
               />
