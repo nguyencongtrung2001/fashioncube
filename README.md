@@ -175,38 +175,13 @@ const cart = JSON.parse(localStorage.getItem('cart') || '[]')
 - **Code splitting**: Routes được tách riêng
 - **Memoization**: useSelector cho hiệu suất tốt hơn
 - **Efficient re-renders**: Redux state normalization
-
-## 🔐 Security Considerations
-
-- Input validation
-- XSS protection
-- Safe localStorage usage
-- Error boundary handling
-
+  
 ## 🐛 Error Handling
-
 - Try-catch cho localStorage operations
 - Redux error states
 - User-friendly error messages
 - Fallback UI components
 
-## 📈 Future Enhancements
-
-- [ ] Search functionality
-- [ ] Product reviews
-- [ ] Wishlist feature
-- [ ] Order history
-- [x] Payment integration
-- [ ] Admin dashboard
-- [ ] Real-time notifications
-
-## 👥 Contributing
-
-1. Fork the project
-2. Create feature branch
-3. Commit changes
-4. Push to branch
-5. Create Pull Request
 
 ## 📄 License
 
